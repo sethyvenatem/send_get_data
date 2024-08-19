@@ -1,7 +1,3 @@
-<!-- Ideas:
-	- Include help boxes with each field to explain what they mean
-	- get goal temperatures and regulation schedule from data.
---> 
 <!DOCTYPE html> 
 <html>
 	<head>
@@ -11,20 +7,26 @@
 
 	<body>
 
-		This is my project to learn about web servers. There is a *.json file on my server at <a href="https://www.pythonanywhere.com/">pythonanywhere</a>. This page enables anyone to view the file content and add entries to it. The details on how it works are available in my Github repository.
+		<h1> Send and get data </h1>
+
+		This is my project to learn about web servers. There is a *.json file on my server at <a href="https://www.pythonanywhere.com/">pythonanywhere</a>. This page enables anyone to view the file content and add entries to it. The details on how it works are available in my <a href="https://github.com/sethyvenatem/send_get_data">Github repository</a>.<br><br>
+
+		You can send whatever you want to the file, but keep in mind that <b>it will be visible to anyone and you won't be able to remove it</b>.
 
 		<h1> Content of the file </h1>
 
 		<!--  Here a textbox and a button. When the button is pressed, the json file from the server is queried, red and it's content is displayed in the text box.--> 
-
+		
+		Click the button to view the content of the file: 
 		<input type="button" value="Get file content" onclick = "getFileContent()"> <br>
-		<textarea id="fileContent" rows="4" cols="50" readonly></textarea>
+		<textarea id="fileContent" rows="10" cols="100" readonly></textarea>
 
 		<h1> Modify the file </h1>
 
 		<!-- Here an empty textbox and a button. When the button is pressed, the content of the textbox is appended to the json file in the server. Use the timestamp as a key for the json file.--> 
 
-		<label>Type in something to add to the file:</label> <br> <textarea id="fileSubmit" rows="4" cols="50"></textarea> <br>
+		<label>Type in your name:</label> <br> <textarea id="name" rows="1" cols="50"></textarea> <br>
+		<label>Type in some text to add to the file:</label> <br> <textarea id="fileSubmit" rows="4" cols="50"></textarea> <br>
 		<input type="button" value="Send data to file" onclick = "sendDataToFile()">
 
 	<script src="{{url_for('static', filename='send_get_data.js')}}"></script>

@@ -2,8 +2,6 @@
 // Call the api if a button is pressed
 // -----------------------------------------------------------
 
-
-
   function getFileContent()
   {
 	// create the url to call the api, paste in the right ip address below
@@ -30,16 +28,16 @@
 	+ currentdate.getHours() + ":"  
 	+ currentdate.getMinutes() + ":" 
 	+ currentdate.getSeconds();
+	var name = document.getElementById('name').value;
 	var text = document.getElementById('fileSubmit').value;
-	url = url + '?'+currentdate+'='+text;
-	console.log(url);
+	url = url + '?name='+name+'&date='+currentdate+'&text='+text;
 
 	fetch(url)
 	.then(response => {
 		return response.json();
    	})
 	.then(_data => {
-		// console.log(JSON.stringify(data.results));
+		document.getElementById('name').value  = "";
 		document.getElementById('fileSubmit').value  = "";
 	})
   }

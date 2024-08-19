@@ -35,7 +35,8 @@ def send_data_to_file():
 
     with open('file.json') as json_data:
         data = json.load(json_data)
-    data.update(request.args)
+    data[request.args['date']] = {'name': request.args['name'],'text': request.args['text']}
+
     with open("file.json", "w") as outfile: 
         json.dump(data, outfile)
 
