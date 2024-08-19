@@ -1,0 +1,14 @@
+.*
+!/.gitignore
+*.pyc
+*.spec
+*.zip
+*.csv
+*.db
+*.png
+*.xlsx
+*.gif
+*.json
+!/file.json
+untitled*
+Untitled*

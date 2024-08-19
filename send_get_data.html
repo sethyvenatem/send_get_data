@@ -1,0 +1,30 @@
+<!-- Ideas:
+	- Include help boxes with each field to explain what they mean
+	- get goal temperatures and regulation schedule from data.
+--> 
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title> Send and get data </title>
+		<!--<link rel="stylesheet" href="style.css" >-->
+	</head> 
+
+	<body>
+		<h1> Content of the file </h1>
+
+		<!--  Here a textbox and a button. When the button is pressed, the json file from the server is queried, red and it's content is displayed in the text box.--> 
+
+		<input type="button" value="Get file content" onclick = "getFileContent()"> <br>
+		<textarea id="fileContent" rows="4" cols="50" readonly></textarea>
+
+		<h1> Modify the file </h1>
+
+		<!-- Here an empty textbox and a button. When the button is pressed, the content of the textbox is appended to the json file in the server. Use the timestamp as a key for the json file.--> 
+
+		<label>Type in something to add to the file:</label> <br> <textarea id="fileSubmit" rows="4" cols="50"></textarea> <br>
+		<input type="button" value="Send data to file" onclick = "sendDataToFile()">
+
+	<script type="text/javascript" src="static/send_get_data.js"></script>
+	
+	</body> 
+</html>
